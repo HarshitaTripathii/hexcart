@@ -3,6 +3,7 @@
 import { MaxWidthWrapper } from '@/components/MaxWidthWrapper';
 import { Button } from '@/components/ui/button';
 import { Rating } from '@/components/ui/ratings';
+import { useCartStore } from '@/lib/cartStore';
 import { useQuery } from '@tanstack/react-query';
 import { HeartIcon } from 'lucide-react';
 import Image from 'next/image';
@@ -72,6 +73,7 @@ export default function Page({
   // searchParams: Promise<{ [key: string]: string | string[] | undefined }>
   }) {
   const { id } = use(params);
+  const { addToCart, product: productState } = useCartStore();
   const { data, isLoading, isError } = useQuery({
     queryKey: [`products-${id}`],
     queryFn: () => getProductDetail(id),
@@ -83,7 +85,7 @@ export default function Page({
   const product = data as Product;
 
 
-
+  console.log("ProductState", productState)
 
   return <div>
     <MaxWidthWrapper>
@@ -113,7 +115,7 @@ export default function Page({
               {product.description}
             </p>
             <div className='w-[70%] flex items-center gap-3'>
-              <Button className={"w-full"} size={"lg"}>Add to cart</Button>
+              <Button className={"w-full"} size={"lg"} onClick={() => addToCart(id)}>Add to cart</Button>
               <Button variant={"secondary"} size={"icon-lg"}>
                 <HeartIcon/>
               </Button>

@@ -31,7 +31,9 @@ export function ProductShowcaseGrid() {
       id: string,
       images: string[]
     }) => {
-      return <ProductCard name={product.title} price={product.price} rating={product.rating} image={product.images[0]} key={product.id} />
+      return <Link prefetch href={`/shop/${product.id}`} key={product.id}>
+        <ProductCard name={product.title} price={product.price} rating={product.rating} image={product.images[0]} key={product.id} />
+      </Link>
     })}
 
   </div>

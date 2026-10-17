@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/Header";
 import Providers from "@/components/Providers";
+import { Suspense } from "react";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -26,12 +27,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn("h-full", "antialiased", "scrollbar-gutter-stable", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
       <body className="min-h-full flex flex-col">
         <Providers>
-          <Header />
-          {children}
+          <Suspense>
+            <Header />
+            {children}
+          </Suspense>
         </Providers>
 
       </body>

@@ -84,6 +84,8 @@ export default function Page({
 
   const product = data as Product;
 
+  const inCart = productState.find(p => p.id === id);
+
 
   console.log("ProductState", productState)
 
@@ -115,7 +117,9 @@ export default function Page({
               {product.description}
             </p>
             <div className='w-[70%] flex items-center gap-3'>
-              <Button className={"w-full"} size={"lg"} onClick={() => addToCart(id)}>Add to cart</Button>
+              <Button className={"w-full"} size={"lg"} onClick={() => !inCart && addToCart(id)} disabled={!!inCart}>
+                {inCart ? "Added to Cart" : "Add to Cart"}
+              </Button>
               <Button variant={"secondary"} size={"icon-lg"}>
                 <HeartIcon/>
               </Button>

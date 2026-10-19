@@ -2,6 +2,13 @@ import { StarIcon } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
 
+interface Product {
+  name: string;
+  price: Number;
+  rating: Number;
+  image: string;
+}
+// { name, price, rating, image }: Product
 export function ProductCard() {
   return (
     <div className="aspect-[6/7] flex flex-col group">

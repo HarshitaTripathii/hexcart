@@ -10,7 +10,7 @@ import { Suspense } from "react";
 
 async function getAllProducts() {
   const response = await fetch(
-      `https://dummyjson.com/products?limit=8`
+      `http://localhost:3000/api/products?limit=8`
     )
     if (!response.ok) throw new Error('Failed to fetch products')
     return response.json()
@@ -22,7 +22,7 @@ export function ProductShowcaseGrid() {
     queryKey: ['products'],
     queryFn: () => getAllProducts(),
   })
-  const products = data.products;
+  const products = data.data;
   return  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {products.map((product: {
       title: string,

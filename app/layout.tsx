@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/Header";
+import Providers from "@/components/Providers";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -35,8 +37,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
+        <Providers>
+          <Suspense>
+            <Header />
+            {children}
+          </Suspense>
+        </Providers>
       </body>
     </html>
   );

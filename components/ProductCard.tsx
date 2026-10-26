@@ -2,6 +2,8 @@ import { StarIcon } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
 
+
+
 interface Product {
   name: string;
   price: number;

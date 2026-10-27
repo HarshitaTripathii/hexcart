@@ -1,4 +1,3 @@
-
 export const products = [
   {
     id: 1,
@@ -13,6 +12,7 @@ export const products = [
     rating: 4.5,
     totalReviews: 3,
     image: "/image.png",
+    images: ["/image.png", "/image.png", "/image.png", "/image.png"],
     colors: [
       { name: "Pioneer Red", hex: "#B22234" },
       { name: "Lover Pink", hex: "#C76B83" },
@@ -67,6 +67,7 @@ export const products = [
     rating: 4.2,
     totalReviews: 2,
     image: "/image.png",
+    images: ["/image.png", "/image.png", "/image.png", "/image.png"],
     colors: [
       { name: "Red Coat", hex: "#A52A2A" },
       { name: "Blush Velvet", hex: "#D88991" },
@@ -111,6 +112,7 @@ export const products = [
     rating: 4.6,
     totalReviews: 2,
     image: "/image.png",
+    images: ["/image.png", "/image.png", "/image.png", "/image.png"],
     colors: [
       { name: "Ivory", hex: "#F3D4BD" },
       { name: "Natural Beige", hex: "#D8A782" },
@@ -199,6 +201,7 @@ export const products = [
     rating: 4.4,
     totalReviews: 2,
     image: "/image.png",
+    images: ["/image.png", "/image.png", "/image.png", "/image.png"],
     colors: [
       { name: "Deep Black", hex: "#111111" },
       { name: "Royal Blue", hex: "#2449A5" },
@@ -242,6 +245,7 @@ export const products = [
     rating: 4.3,
     totalReviews: 2,
     image: "/image.png",
+    images: ["/image.png", "/image.png", "/image.png", "/image.png"],
     colors: [
       { name: "Clear", hex: "#F5F5F5" },
       { name: "Golden Tint", hex: "#D6B56D" },

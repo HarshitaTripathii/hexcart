@@ -6,6 +6,7 @@ import Image from "next/image";
 import { products } from "@/lib/dummyData";
 import { notFound } from "next/navigation";
 import { WishlistButton } from "@/components/WishlistButton";
+import { ImageGallery } from "@/components/ImageGallery";
 
 export default async function Page({
   params,
@@ -23,7 +24,7 @@ export default async function Page({
         {/* <div className=" bg-blue-300 min-h-screen flex items-center justify-center  "> */}
         <div className="w-full flex flex-col md:flex-row gap-6">
           {/* image part */}
-          <div className="flex-1 w-full md:w-1/2 h-96 md:h-[500px]  rounded relative overflow-hidden">
+          {/* <div className="flex-1 w-full md:w-1/2 h-96 md:h-[500px]  rounded relative overflow-hidden">
             <Image
               src={product.image}
               alt={product.title}
@@ -31,6 +32,9 @@ export default async function Page({
               className="hover:scale-110 transition-all duration-300 "
               fill
             />
+          </div> */}
+          <div className="flex-1 w-full md:w-1/2">
+            <ImageGallery prodId={product.id} />
           </div>
           {/* description part + Add to cart button */}
           <div className="flex flex-col flex-1 justify-items-start gap-3">
